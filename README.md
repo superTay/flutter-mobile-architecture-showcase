@@ -87,7 +87,8 @@ Two key rules the codebase enforces:
 ## Stack
 
 Flutter · Dart 3 · Riverpod · go_router · Supabase (auth/reads/realtime) ·
-Dio + dio_smart_retry · Drift/SQLite · flutter_secure_storage · decimal · freezed.
+**n8n automation backend (all business writes)** · Dio + dio_smart_retry ·
+Drift/SQLite · flutter_secure_storage · decimal · freezed.
 
 ## License
 
