@@ -1,0 +1,18 @@
+# Real config must never be committed — only the .example template is public.
+lib/core/config/app_config.dart
+
+# Flutter / Dart
+.dart_tool/
+.packages
+build/
+.flutter-plugins
+.flutter-plugins-dependencies
+pubspec.lock
+
+# IDE
+.idea/
+.vscode/
+*.iml
+
+# OS
+.DS_Store

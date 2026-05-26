@@ -1,0 +1,38 @@
+name: field_app
+description: "Sanitized architecture showcase — selected data-layer patterns from a private Flutter app."
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.5.0
+
+# NOTE: this is a curated extract, not a runnable app. Dependencies are
+# listed so the stack is clear and the included files type-check in context.
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # State & networking
+  flutter_riverpod: ^2.6.1
+  dio: ^5.8.0+1
+  dio_smart_retry: ^7.0.1
+  supabase_flutter: ^2.10.2
+
+  # Local storage & offline cache
+  flutter_secure_storage: ^9.2.4
+  drift: ^2.32.1
+  drift_flutter: ^0.3.0
+
+  # Fiscal / currency
+  decimal: ^3.2.1
+
+  # Utils
+  logger: ^2.5.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+
+flutter:
+  uses-material-design: true
