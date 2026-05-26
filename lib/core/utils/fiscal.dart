@@ -26,7 +26,9 @@ class Fiscal {
   static const double irpfGeneral = 15.0;
   static const double irpfNuevos = 7.0; // First 3 years of activity
 
-  /// Banker's rounding to 2 decimal places.
+  /// Rounds to 2 decimal places using the `decimal` package (half away from
+  /// zero) instead of binary-float arithmetic, which avoids representation
+  /// drift like `0.1 + 0.2 != 0.3`.
   /// Mirrors the web implementation's `redondear2(n)`.
   static double redondear2(double n) {
     final d = Decimal.parse(n.toStringAsFixed(10));

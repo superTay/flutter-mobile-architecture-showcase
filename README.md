@@ -22,7 +22,7 @@ backends safely, stays usable offline, and keeps financial math exact.
 
 | File | Pattern it demonstrates |
 |------|-------------------------|
-| [`lib/core/utils/fiscal.dart`](lib/core/utils/fiscal.dart) | Exact financial math — Spanish VAT/withholding, **banker's rounding** with the `decimal` package, NIF/CIF/NIE validation with check-letter algorithm. Ported 1:1 from the web app to guarantee cross-language parity (no cent drift). |
+| [`lib/core/utils/fiscal.dart`](lib/core/utils/fiscal.dart) | Exact financial math — Spanish VAT/withholding, **`decimal`-based rounding to 2 decimals** (not binary-float arithmetic, to avoid representation drift), NIF/CIF/NIE validation with check-letter algorithm. Ported from the web app's logic. |
 | [`test/fiscal_test.dart`](test/fiscal_test.dart) | Unit tests for the fiscal module — rounding edge cases, VAT/IRPF, ID validation. |
 | [`lib/data/services/api_service.dart`](lib/data/services/api_service.dart) | **Dio HTTP client** with a session-key interceptor, per-endpoint timeout overrides, smart retry with backoff, and centralized human-readable error mapping. |
 | [`lib/data/services/auth_service.dart`](lib/data/services/auth_service.dart) | **Dual-auth pattern**: provider auth (JWT) + a separate internal session token for the write backend, with automatic token renewal (TTL/margin) and self-healing on app restart. |
@@ -68,8 +68,8 @@ Two key rules the codebase enforces:
   impractical. Solution: manual Riverpod providers + Drift's low-level raw-SQL
   API. Trade-off: more boilerplate, zero dependency-pin deadlock.
 - **`decimal` for money, never `double` arithmetic in widgets.** All rounding is
-  banker's rounding centralized in one module, mirrored 1:1 with the web app so
-  the same invoice totals to the same cent on both platforms.
+  centralized in one module and computed with the `decimal` package to avoid
+  binary-float representation errors, mirroring the web app's fiscal logic.
 - **Offline-first reads.** When connectivity drops, the UI serves the Drift cache
   and disables write actions instead of failing.
 
@@ -91,4 +91,5 @@ Dio + dio_smart_retry · Drift/SQLite · flutter_secure_storage · decimal · fr
 
 ## License
 
-MIT — see [LICENSE](LICENSE).
+Source-available for **portfolio and evaluation only** — not open source.
+See [LICENSE](LICENSE). © 2026 Christian Marzal Della Rovere. All rights reserved.

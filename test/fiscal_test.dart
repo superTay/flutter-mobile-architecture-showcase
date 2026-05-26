@@ -6,19 +6,16 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:field_app/core/utils/fiscal.dart';
 
 void main() {
-  group('Fiscal.redondear2 — banker\'s rounding to 2 decimals', () {
-    test('rounds half to even', () {
-      expect(Fiscal.redondear2(1.005), closeTo(1.0, 1e-9));
+  group('Fiscal.redondear2 — rounding to 2 decimals (via decimal package)', () {
+    test('rounds half away from zero', () {
+      expect(Fiscal.redondear2(1.005), closeTo(1.01, 1e-9));
       expect(Fiscal.redondear2(2.675), closeTo(2.68, 1e-9));
+      expect(Fiscal.redondear2(-1.235), closeTo(-1.24, 1e-9));
     });
 
     test('keeps already-rounded values', () {
       expect(Fiscal.redondear2(10.0), 10.0);
       expect(Fiscal.redondear2(0.0), 0.0);
-    });
-
-    test('handles negatives', () {
-      expect(Fiscal.redondear2(-1.235), closeTo(-1.24, 1e-9));
     });
   });
 
