@@ -1,10 +1,58 @@
+<!--
+================================================================
+README del repo github.com/superTay/flutter-mobile-architecture-showcase
+================================================================
+
+Importante:
+- El archivo logo-movil.svg vive en la RAÍZ del repo (no en assets/).
+  Por eso el <img src="logo-movil.svg"> NO lleva prefijo de carpeta.
+- Si lo mueves a assets/ en el futuro, actualiza la ruta a "assets/logo-movil.svg".
+
+Para usarlo:
+1. Asegúrate de que logo-movil.svg está en la raíz del repo (ya lo tienes).
+2. En GitHub, edita el README del repo, borra todo el contenido actual
+   y pega lo de abajo (desde la línea <div align="center"> hasta el final).
+3. Commit a main.
+
+Cambios respecto a la versión anterior:
+- Logo nuevo al inicio (160px, clicable hacia la web companion)
+- Sub-tagline + badges (Flutter 19, Dart 3, Riverpod, Drift, Supabase,
+  TestFlight aprobado, licencia)
+- Botones CTA: "Web companion (live)" + "Author's portfolio"
+- Tabla "KonquerAI ecosystem" al final con cross-links a los otros 2 repos
+- Footer con tres links (web companion · portfolio · @superTay)
+- TODA la parte técnica (Why these files, Architecture, Engineering decisions,
+  What was changed, Stack, License) queda intacta — no se toca una coma
+================================================================
+-->
+
+<div align="center">
+
+<a href="https://app.konquerai.com">
+  <img src="logo-movil.svg" alt="KonquerAI Mobile" width="160" />
+</a>
+
 # Flutter Mobile Architecture — Showcase
 
-A **curated, sanitized extract** of selected patterns from a private production
-Flutter app I built solo: a mobile invoicing/quoting tool for self-employed
-tradespeople in Spain (painters, electricians, plumbers, builders). The app is
-the mobile companion to an existing web SaaS — distributed via TestFlight, with
-a build approved by Apple's review.
+**The mobile companion to a production invoicing & quoting SaaS for self-employed tradespeople in Spain.**
+
+A curated, sanitized extract of selected patterns from a private production Flutter app I built solo — distributed via TestFlight, with a build approved by Apple's review.
+
+<p>
+  <a href="https://app.konquerai.com"><img src="https://img.shields.io/badge/Web%20companion-app.konquerai.com-3FCF8E?style=for-the-badge&logo=vercel&logoColor=white" alt="Web companion (live)"></a>
+  <a href="https://christian-marzal-portfolio.vercel.app/"><img src="https://img.shields.io/badge/Author's%20portfolio-christian--marzal-1a365d?style=for-the-badge&logoColor=white" alt="Author's portfolio"></a>
+</p>
+
+![Flutter](https://img.shields.io/badge/Flutter-3-02569B?logo=flutter&logoColor=white)
+![Dart](https://img.shields.io/badge/Dart-3-0175C2?logo=dart&logoColor=white)
+![Riverpod](https://img.shields.io/badge/Riverpod-State-0553B1?logoColor=white)
+![go_router](https://img.shields.io/badge/go__router-Auth%20guard-3DDC84?logoColor=white)
+![Drift](https://img.shields.io/badge/Drift-SQLite%20offline-003B57?logo=sqlite&logoColor=white)
+![Supabase](https://img.shields.io/badge/Supabase-Auth%20%2B%20Realtime-3FCF8E?logo=supabase&logoColor=white)
+![TestFlight](https://img.shields.io/badge/TestFlight-build%20approved-007AFF?logo=appstore&logoColor=white)
+![License](https://img.shields.io/badge/license-source--available-orange)
+
+</div>
 
 > ⚠️ **This is not a runnable app.** It is a small set of representative files,
 > chosen because they show interesting engineering decisions *without* exposing
@@ -90,7 +138,23 @@ Flutter · Dart 3 · Riverpod · go_router · Supabase (auth/reads/realtime) ·
 **n8n automation backend (all business writes)** · Dio + dio_smart_retry ·
 Drift/SQLite · flutter_secure_storage · decimal · freezed.
 
+---
+
+## The KonquerAI ecosystem (all built solo)
+
+| Repo | What it is |
+|------|------------|
+| **Flutter mobile app** (this repo) | The mobile companion (TestFlight-approved): offline-first cache, dual-auth, fiscal math ported 1:1 for cross-language parity. |
+| [💻 React web dashboard](https://github.com/superTay/react-web-architecture-showcase) | React 19 + TypeScript front end — the source-of-truth contracts the mobile mirrors. Live at [app.konquerai.com](https://app.konquerai.com). |
+| [⚙️ Automation backend](https://github.com/superTay/konquerai-automation-backend) | 17 n8n workflows: OCR, conversational AI assistants, email-to-invoice ingestion, PDF generation, VeriFactu-style hash chaining. |
+
 ## License
 
 Source-available for **portfolio and evaluation only** — not open source.
 See [LICENSE](LICENSE). © 2026 Christian Marzal Della Rovere. All rights reserved.
+
+---
+
+<p align="center">
+  <sub>Built solo · <a href="https://app.konquerai.com">web companion</a> · <a href="https://christian-marzal-portfolio.vercel.app/">author's portfolio</a> · <a href="https://github.com/superTay">@superTay</a></sub>
+</p>
